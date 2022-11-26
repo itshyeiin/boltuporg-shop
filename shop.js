@@ -122,3 +122,28 @@ sr.reveal(`.home__img`, {delay: 500})
 sr.reveal(`.about__img`,{origin: 'left'})
 sr.reveal(`.about__data`,{origin: 'right'})
 sr.reveal(`.mv__card, .section__title-center , .officers__card, .footer`,{interval: 100})
+
+const popupScreen = document.querySelector(".popup-screen");
+const popup = document.querySelector(".popup");
+const closeBtn = document.querySelector(".close-btn");
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        popupScreen.classList.add("active");
+    }, 2000)
+})
+
+closeBtn.addEventListener("click", () =>{
+    popupScreen.classList.remove("active");
+    document.cookie = "WebsiteName=testWebsite; max-age=" + 24 * 60 * 60;
+
+});
+
+const WebsiteCookie = document.cookie.indexof("WebsiteName=");
+if(WebsiteCookie != 1){
+    popupScreen.style.display = "none";
+}
+
+else{
+    popupScreen.style.display = "flex";
+}
