@@ -97,6 +97,7 @@ body.dark-theme{
 }
 
 .dark-theme .header,
+.dark-theme .officers__officers,
 .dark-theme .footer{
   background-color: #1b263b;
 }
